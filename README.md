@@ -6,7 +6,6 @@
 
 ## Feel free to fork the repo and make your own version.
 
-## Course Link : <here>
   
  
   
