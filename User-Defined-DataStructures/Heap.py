@@ -22,19 +22,22 @@ def insert(array, newNum):
             heapify(array, size, i)
 
 
-def deleteNode(array, num):
+def delete(self, indx):
+        """
+        Deletes the value on the specified index node
+        :param indx: index whose node is to be removed
+        :return: Value of the node deleted from the heap
+        """
+        if self.heap_size == 0:
+            print("Heap Underflow!!")
+            return
 
-    size = len(array)
-    i = 0
-    for i in range(0, size):
-        if num == array[i]:
-            break
-    array[i], array[size-1] = array[size-1], array[i]
-    array.remove(size-1)
+        self.heap[-1], self.heap[indx] = self.heap[indx], self.heap[-1]
+        self.heap_size -= 1
 
-    for i in range((len(array)//2)-1, -1, -1):
-        heapify(array, len(array), i)
+        self.heapify(indx, self.heap, self.heap_size)
 
+        return self.heap.pop()
 
 
 
@@ -48,5 +51,5 @@ insert(arr, 5)
 insert(arr, 2)
 
 print ("Max-Heap array: " + str(arr))
-deleteNode(arr, 5)
+deleteNode(arr,2)
 print("After deleting an element: " + str(arr))
