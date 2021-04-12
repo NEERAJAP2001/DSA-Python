@@ -22,22 +22,23 @@ def insert(array, newNum):
             heapify(array, size, i)
 
 
-def delete(self, indx):
+def delete(heap,indx):
         """
         Deletes the value on the specified index node
         :param indx: index whose node is to be removed
         :return: Value of the node deleted from the heap
         """
-        if self.heap_size == 0:
+        heap_size = len(heap)
+        if heap_size == 0:
             print("Heap Underflow!!")
             return
 
-        self.heap[-1], self.heap[indx] = self.heap[indx], self.heap[-1]
-        self.heap_size -= 1
+        heap[-1], heap[indx] = heap[indx], heap[-1]
+        heap_size -= 1
 
-        self.heapify(indx, self.heap, self.heap_size)
+        heapify(indx, self.heap, self.heap_size)
 
-        return self.heap.pop()
+        return heap.pop()
 
 
 
