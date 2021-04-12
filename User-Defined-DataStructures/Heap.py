@@ -36,7 +36,7 @@ def delete(heap,indx):
         heap[-1], heap[indx] = heap[indx], heap[-1]
         heap_size -= 1
 
-        heapify(indx, self.heap, self.heap_size)
+        heapify(indx, heap, heap_size)
 
         return heap.pop()
 
